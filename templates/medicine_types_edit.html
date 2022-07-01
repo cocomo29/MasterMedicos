@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+    {% block content %}
+
+    <div class="container mt-3">
+        <h1>Edit Medicine Type</h1>
+        <form method="post" action="/medicine-type/edit/{{data[0]}}">
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">MedicineType</label>
+              <input type="text" class="form-control" id="MedicineName" name="MedicineName" value="{{data[1]}}">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Status</label>
+                <input type="text" class="form-control" id="Status" name="status" value="{{data[2]}}">
+              </div>
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="/medicine-type" class="btn btn-primary">Back</a>
+
+          </form>
+    </div>
+
+    {% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+    
+    {% block content %}
+
+    <div class="container">
+        <div class="container d-flex justify-content-between mb-3 mt-4" style="height:fit-content ;">
+            <h1>Medicine Routes</h1>
+            <a class="btn btn-outline-primary d-flex flex-wrap align-items-center" href="/medicine-route/create">Create</a>
+        </div>
+        <table class="table table-striped table-bordered" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th>RouteId</th>
+                    <th>RouteType</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for route in data %}
+                <tr>
+                    <td>{{route[0]}}</td>
+                    <td>{{route[1]}}</td>
+                    <td>{{route[2]}}</td>
+                        <td>
+                    <div class="w-75 btn-group" role="group">
+                        <a href="/medicine-route/edit/{{route[0]}}">Edit</a> &nbsp;|&nbsp; <a href="/medicine-route/delete/{{route[0]}}">Delete</a>
+                    </div>
+                        </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endblock %}

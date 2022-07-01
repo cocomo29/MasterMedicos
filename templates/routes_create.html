@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+    {% block content %}
+
+    <div class="container mt-3">
+        <h1>Create Medicine Route</h1>
+        <form method="post" action="/medicine-route/create">
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">RouteType</label>
+              <input type="text" class="form-control" id="RouteType" name="RouteType">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Status</label>
+                <input type="text" class="form-control" id="Status" name="status">
+              </div>
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="/medicine-route" class="btn btn-primary">Back</a>
+
+          </form>
+    </div>
+
+    {% endblock %}

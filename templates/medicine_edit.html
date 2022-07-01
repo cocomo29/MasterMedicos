@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+    {% block content %}
+
+    <div class="container mt-3">
+        <h1>Create Medicine</h1>
+        <form method="post" action="/medicine/edit/{{data[0]}}">
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">GenericName</label>
+              <input type="text" class="form-control" id="GenericName" name="GenericName" value="{{data[1]}}">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">MedicineType</label>
+                <input type="text" class="form-control" id="MedicineType" name="MedicineType" value="{{data[2]}}">
+              </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">MarketName</label>
+                <input type="text" class="form-control" id="MarketName" name="MarketName" value="{{data[3]}}">
+              </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Route</label>
+                <input type="text" class="form-control" id="Route" name="Route" value="{{data[4]}}">
+              </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Potency</label>
+                <input type="text" class="form-control" id="Potency" name="Potency" value="{{data[5]}}">
+              </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Status</label>
+                <input type="text" class="form-control" id="Status" name="Status" value="{{data[6]}}">
+              </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a href="/admin" class="btn btn-primary">Back</a>
+          </form>
+    </div>
+
+    {% endblock %}

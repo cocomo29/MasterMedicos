@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+    
+    {% block content %}
+
+    <div class="container">
+        <div class="container d-flex justify-content-between mb-3 mt-4" style="height:fit-content ;">
+            <h1>Medicine Types</h1>
+            <a class="btn btn-outline-primary d-flex flex-wrap align-items-center" href="/medicine-type/create">Create</a>
+        </div>
+        <table class="table table-striped table-bordered" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th>MedicineTypeId</th>
+                    <th>MedicineType</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for type in data %}
+                <tr>
+                    <td>{{type[0]}}</td>
+                    <td>{{type[1]}}</td>
+                    <td>{{type[2]}}</td>
+                        <td>
+                    <div class="w-75 btn-group" role="group">
+                        <a href="/medicine-type/edit/{{type[0]}}">Edit</a> &nbsp;|&nbsp; <a href="/medicine-type/delete/{{type[0]}}">Delete</a>
+                    </div>
+                        </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+    
+    {% block content %}
+
+    <div class="container">
+        <div class="container d-flex justify-content-between mb-3 mt-4" style="height:fit-content;">
+            <h1>Result</h1>
+        </div>
+        <table class="table table-striped table-bordered"   style="width: 100%;">
+            {% if columns and data %}
+            <thead>
+                <tr>
+                    {% for col in columns %}
+                    <td>{{col}}</td>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for medicine in data %}
+                <tr>
+                    {% for data in medicine %}
+                    <td>{{data}}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+            {% else %}
+            <div class="container mt-3">
+                <h1 class="display-1">TABLE NOT FOUND!!</h1>
+            </div>
+            {% endif %}
+        </table>
+        <a class="btn btn-primary" href="/custom-query">Back</a>
+    </div>
+    {% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+    
+    {% block content %}
+
+    <div class="container">
+        <div class="container d-flex justify-content-between mb-3 mt-4" style="height:fit-content;">
+            <h1>Medicine List</h1>
+            <a class="btn btn-outline-primary d-flex flex-wrap align-items-center" href="/medicine/create">Create</a>
+        </div>
+        <table class="table table-striped table-bordered"   style="width: 100%;">
+            <thead>
+                <tr>
+                    <th>MedicineId</th>
+                    <th>GenericName</th>
+                    <th>MedicineType</th>
+                    <th>MarketName</th>
+                    <th>Route</th>
+                    <th>Potency</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for medicine in data %}
+                <tr>
+                    <td>{{medicine[0]}}</td>
+                    <td>{{medicine[1]}}</td>
+                    <td>{{medicine[2]}}</td>
+                    <td>{{medicine[3]}}</td>
+                    <td>{{medicine[4]}}</td>
+                    <td>{{medicine[5]}}</td>
+                    <td>{{medicine[6]}}</td>
+                        <td>
+                    <div class="w-75 btn-group" role="group">
+                        <a href="/medicine/edit/{{medicine[0]}}">Edit</a> &nbsp;|&nbsp; <a href="/medicine/delete/{{medicine[0]}}">Delete</a>
+                    </div>
+                        </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endblock %}
