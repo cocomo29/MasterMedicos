@@ -10,7 +10,7 @@ Type `py main.py` in the project's directory or directly run [main.py]
 
 If all goes well, your webapp will be deployed on localhost:5000 (127.0.0.1:5000)
 
-Type /admin in url (127.0..1:5000/admin) to perform CRUD operations in your database.
+Type /admin in url (127.0.0.1:5000/admin) to manipulate data in your database.
 
 # :gear: Requirements
 Install via pip
